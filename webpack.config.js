@@ -22,6 +22,14 @@ module.exports = {
 				]
 			},
 			{
+				test: /\.(scss|sass)$/,
+				use: [
+					"style-loader",
+					"css-loader",
+					"sass-loader",
+				],
+			},
+			{
 				test: /\.pug$/,
 				use: [
 					{ loader: 'file-loader?name=[name].html' },
