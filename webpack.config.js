@@ -1,17 +1,14 @@
 const path = require('path')
 
 module.exports = {
-	entry: './src/templates/index-webpack.pug',
+	//entry: './src/index.js',
+	entry: './src/templates/index.pug',
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 	},
 	module: {
 		rules: [
-			{
-				test: /\.js$/,
-				use: [ 'script-loader' ],
-			},
 			{
 				test: /\.(png|jpe?g|gif|webp)$/,
 				use: [
@@ -24,9 +21,13 @@ module.exports = {
 			{
 				test: /\.(scss|sass)$/,
 				use: [
-					"style-loader",
-					"css-loader",
-					"sass-loader",
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[hash].css',
+						},
+					},
+					'sass-loader',
 				],
 			},
 			{
