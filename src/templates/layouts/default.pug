@@ -26,7 +26,7 @@ html(lang=manifest.lang)
 		// Queue of JS components to initialize
 		script.
 			initComponents = [
-				{ name: 'shapes', data: { url: '#{assetPath}/sprites/shapes.svg' } }
+				{ name: 'shapes', data: { url: '${require("../images/sources/plus.svg")}' } } //- @TODO: url to all sprites in one file
 			]
 
 		//- Application init

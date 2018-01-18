@@ -1,7 +1,6 @@
 const path = require('path')
 
 module.exports = {
-	//entry: './src/index.js',
 	entry: [
 		'./src/scripts/index.js',
 		'./src/templates/index.pug',
@@ -13,13 +12,8 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(png|jpe?g|gif|webp)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {}
-					}
-				]
+				test: /\.(png|jpe?g|gif|webp|svg)$/,
+				use: [ 'file-loader' ]
 			},
 			{
 				test: /\.(scss|sass)$/,
@@ -50,6 +44,7 @@ module.exports = {
 								'link:href',
 								'script:src',
 							],
+							interpolate: 'require',
 						},
 					},
 					{ loader: 'pug-html-loader' },
