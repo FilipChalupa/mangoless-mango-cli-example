@@ -1,3 +1,5 @@
+window.DEBUG = true // @TODO
+
 //import './utils/swRegister'
 import './plugins'
 import jQueryFallbackProvider from './utils/jQueryFallbackProvider'
