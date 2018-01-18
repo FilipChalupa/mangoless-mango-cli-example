@@ -31,6 +31,10 @@ module.exports = {
 				],
 			},
 			{
+				test: /manifest\.json$/,
+				use: [ 'file-loader' ],
+			},
+			{
 				test: /\.pug$/,
 				use: [
 					{ loader: 'file-loader?name=[name].html' },

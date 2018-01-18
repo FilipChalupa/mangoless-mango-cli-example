@@ -13,7 +13,7 @@ html(lang=manifest.lang)
 
 		title=title
 
-		link(rel='manifest', href=`${assetPath}/data/manifest.json`)
+		link(rel='manifest', href='../data/manifest.json')
 		meta(name='theme-color', content=manifest.theme_color)
 
 		meta(name='description', content=description)
@@ -31,7 +31,7 @@ html(lang=manifest.lang)
 
 		//- Application init
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', defer)
-		script(src=`${assetPath}/scripts/${buildstamp}index.js`, defer)
+		script(src='/../scripts/index.js', defer)
 
 	body
 
