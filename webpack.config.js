@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './src/templates/index-webpack.pug',
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist'),
@@ -9,12 +9,30 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.(png|jpe?g|gif|webp|js)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {}
+					}
+				]
+			},
+			{
 				test: /\.pug$/,
 				use: [
-					"file-loader?name=[name].html",
-					"extract-loader",
-					"html-loader",
-					"pug-html-loader"
+					{ loader: 'file-loader?name=[name].html' },
+					{ loader: 'extract-loader' },
+					{
+						loader: 'html-loader',
+						options: {
+							attrs: [
+								'img:src',
+								'link:href',
+								'script:src',
+							],
+						},
+					},
+					{ loader: 'pug-html-loader' },
 				]
 			},
 		],

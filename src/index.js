@@ -1,1 +1,1 @@
-import './templates/index-webpack.pug'
+console.log('Hello world!')
