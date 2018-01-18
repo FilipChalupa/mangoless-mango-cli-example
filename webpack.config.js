@@ -9,7 +9,11 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(png|jpe?g|gif|webp|js)$/,
+				test: /\.js$/,
+				use: [ 'script-loader' ],
+			},
+			{
+				test: /\.(png|jpe?g|gif|webp)$/,
 				use: [
 					{
 						loader: 'file-loader',
